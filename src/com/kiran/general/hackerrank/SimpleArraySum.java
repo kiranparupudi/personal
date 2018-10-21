@@ -2,6 +2,7 @@ package com.kiran.general.hackerrank;
 
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 /**
  * @author Kiran
@@ -13,10 +14,9 @@ public class SimpleArraySum {
 	 * Complete the simpleArraySum function below.
 	 */
 	static int simpleArraySum(int[] ar) {
-		int result = 0;
-		for (int i = 0; i < ar.length; i++)
-			result += ar[i];
-		return result;
+		//return Arrays.stream(ar).sum();
+		return IntStream.of(ar).sum();
+		//return IntStream.of(ar).reduce(1, (x, y)->x*y);
 	}
 
 	private static final Scanner scanner = new Scanner(System.in);
@@ -45,8 +45,7 @@ public class SimpleArraySum {
 			ar[arItr] = arItem;
 		}
 
-		int result = simpleArraySum(ar);
-		System.out.println("Result: " + result);
+		System.out.println("Result: " + simpleArraySum(ar));
 
 	}
 
